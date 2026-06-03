@@ -59,4 +59,4 @@ This micro project demonstrates how to use JsonPowerDB for basic CRUD operations
 ## 👩‍💻 Developer
 
 **Soni Gupta**  
-Login2Xplore Internship Project
+Login2Xplore Internship Project.
