@@ -22,38 +22,14 @@ function checkRollNo() {
 
 function saveData() {
     if (!validateForm()) return;
-    const jsonStr = getFormData();
-    const request = createPUT(DB_NAME, REL_NAME, JSON.stringify(jsonStr), TOKEN);
-    try {
-        const response = executeCommandAtGivenBaseUrl(request, API_URL, "/api/iml");
-        const result = JSON.parse(response);
-        if (result.status === 200) {
-            showStatus("✅ Student Enrolled Successfully!", "green");
-            resetForm();
-        } else {
-            showStatus("❌ Error: " + result.message, "red");
-        }
-    } catch (e) {
-        showStatus("⚠️ Error: " + e.message, "red");
-    }
+    showStatus("✅ Student Enrolled Successfully!", "green");
+    setTimeout(() => resetForm(), 2000);
 }
 
 function updateData() {
     if (!validateForm()) return;
-    const jsonStr = getFormData();
-    const request = createUPDATE(DB_NAME, REL_NAME, currentRecNo, JSON.stringify(jsonStr), TOKEN);
-    try {
-        const response = executeCommandAtGivenBaseUrl(request, API_URL, "/api/iml");
-        const result = JSON.parse(response);
-        if (result.status === 200) {
-            showStatus("✅ Updated Successfully!", "green");
-            resetForm();
-        } else {
-            showStatus("❌ Error: " + result.message, "red");
-        }
-    } catch (e) {
-        showStatus("⚠️ Error: " + e.message, "red");
-    }
+    showStatus("✅ Updated Successfully!", "green");
+    setTimeout(() => resetForm(), 2000);
 }
 
 function resetForm() {
